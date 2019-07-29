@@ -164,6 +164,8 @@ function resetGame() {
     time = 0;
     timerOn = false;
     stars.innerHTML = star;
+    toggleClass(openCards[0]);
+    openCards = [];
     shuffleDeck();
 }
 

@@ -110,8 +110,8 @@ function closeModal() {
 //Win condition function
 function winCondition() {
     if (matchingCards.length === 16) {
-        openModal();
         stopTimer();
+        openModal();
     }
 }
 
@@ -141,9 +141,9 @@ function displayTimer() {
 
 //Display number of stars on Modal and in game.
 function setStars(elem) {
-    if (count < 18) {
+    if (count < 12) {
         elem.innerHTML = star;
-    } else if (count >= 18 && count < 22) {
+    } else if (count >= 12 && count < 18) {
         elem.innerHTML = '<li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li>';
     } else {
         elem.innerHTML = '<li><i class="fa fa-star"></i></li>';
@@ -160,9 +160,10 @@ function resetGame() {
     }
     matchingCards = [];
     closeModal();
-    timerOn = false;
     time = 0;
+    timerOn = false;
     stars.innerHTML = star;
+    shuffleDeck();
 }
 
 //Click Event Listener for when cards are clicked.

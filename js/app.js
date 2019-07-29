@@ -70,13 +70,14 @@ function doCardsMatch() {
             for (let i = 0; i < openCards.length; i++) {
                 matchingCards.push(openCards[i]);
             }
+            console.log(matchingCards);
             openCards = [];
             incrementCounter();
         } else {
             setTimeout(() => {
-                for (let i = 0; i < openCards.length; i++) {
-                    toggleClass(openCards[i]);
-                }
+                openCards.forEach(card => {
+                    toggleClass(card);
+                });
                 openCards = [];
             }, 1000);
             incrementCounter();
@@ -177,7 +178,6 @@ deck.addEventListener('click', event => {
         startTimer();
         timerOn = true;
     }
-    console.log(timer);
 
     setStars(stars);
     setStars(modalStars);

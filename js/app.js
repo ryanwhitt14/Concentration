@@ -156,15 +156,17 @@ function resetGame() {
     moveCounter.innerHTML = count;
     modalCounter.innerHTML = count;
     for (let i = 0; i < matchingCards.length; i++) {
-        matchingCards[i].classList.remove('open', 'show', 'avoid-click');
+        toggleClass(matchingCards[i]);
     }
+    openCards.forEach(card => {
+        toggleClass(card);
+    });
     matchingCards = [];
     stopTimer();
     closeModal();
     time = 0;
     timerOn = false;
     stars.innerHTML = star;
-    toggleClass(openCards[0]);
     openCards = [];
     shuffleDeck();
 }

@@ -159,6 +159,7 @@ function resetGame() {
         matchingCards[i].classList.remove('open', 'show', 'avoid-click');
     }
     matchingCards = [];
+    stopTimer();
     closeModal();
     time = 0;
     timerOn = false;
@@ -172,6 +173,7 @@ deck.addEventListener('click', event => {
         startTimer();
         timerOn = true;
     }
+    console.log(timer);
 
     setStars(stars);
     setStars(modalStars);

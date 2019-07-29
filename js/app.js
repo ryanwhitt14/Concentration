@@ -112,6 +112,8 @@ function closeModal() {
 function winCondition() {
     if (matchingCards.length === 16) {
         stopTimer();
+        modalCounter.innerHTML = count;
+        setStars(modalStars);
         openModal();
     }
 }
@@ -155,7 +157,6 @@ function setStars(elem) {
 function resetGame() {
     count = 0;
     moveCounter.innerHTML = count;
-    modalCounter.innerHTML = count;
     for (let i = 0; i < matchingCards.length; i++) {
         toggleClass(matchingCards[i]);
     }
@@ -180,7 +181,6 @@ deck.addEventListener('click', event => {
     }
 
     setStars(stars);
-    setStars(modalStars);
 
     if (event.target.classList.contains('card')) {
         if (openCards.length <= 1) {

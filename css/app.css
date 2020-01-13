@@ -66,7 +66,7 @@ h1 {
 }
 
 .deck .card.open {
-    transform: rotateY(0);
+    transform: rotateY(180deg);
     background: #02b3e4;
     cursor: default;
 }
@@ -124,14 +124,17 @@ Styles for the Modal
     height: 100%;
     width: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.6);
 }
 
 .modal-content {
-    background-color: #fff;
+    background-color: #3b27ba;
     margin: 20% auto;
     padding: 20px;
     width: 70%;
+    box-shadow: 1px 1px 20px 10px rgba(255, 110, 255, 0.6);
+    color: white;
+    border-radius: 10px;
 }
 
 .content-wrapper {
@@ -145,9 +148,28 @@ Styles for the Modal
     padding: 10px;
 }
 
+.star-message {
+    margin: 0;
+}
+
+.star-rating-wrapper {
+    display: block;
+    margin-top: 5px;
+}
+
+h4 {
+    margin: 0;
+}
+
 .star-rating {
     list-style-type: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.timer {
+    margin: 15px;
 }
